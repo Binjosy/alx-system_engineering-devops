@@ -1,6 +1,6 @@
 # This manifest will kill the process
 
-exec { 'pkill':
+exec {'kill':
  command  => 'pkill killmenow',
- provider => 'shell',
+ path     => '/usr/bin/',
 }
