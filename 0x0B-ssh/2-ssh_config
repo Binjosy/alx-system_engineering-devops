@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# This script configures the ssh to connect with the surver without typing a password
-
-Host *
-    PasswordAuthentication no
-    IdentityFile ~/.ssh/id_rsa
-    IdentityFile ~/.ssh/school
