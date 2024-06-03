@@ -1,0 +1,42 @@
+Infrastructure Components
+1. Server
+• Definition: A server is a powerful computer that provides resources, data, services, or programs
+to other computers, known as clients, over a network.
+• Our Server: A single physical or virtual machine running the necessary software components.
+2. Domain Name
+• Role: A domain name is a human-readable address used to identify and access resources on the
+internet. It maps to the server's IP address.
+• Our Domain: foobar.com configured with a www record.
+3. DNS Record
+• Type: The www in www.foobar.com is a CNAME (Canonical Name) record that maps to the A
+record of foobar.com, which points to the server's IP address (8.8.8.8).
+4. Web Server (Nginx)
+• Role: The web server handles HTTP requests from clients (users' browsers), serves static content
+(HTML, CSS, JavaScript, images), and forwards dynamic requests to the application server.
+• Our Web Server: Nginx, installed on the server, listening on port 80 (HTTP) and port 443
+(HTTPS).
+5. Application Server
+• Role: The application server processes dynamic content, runs the application logic, and interacts
+with the database to generate responses.
+• Our Application Server: A software like PHP-FPM (FastCGI Process Manager) to run PHP code.
+6. Application Files
+• Role: The actual codebase of the web application, including HTML, CSS, JavaScript, and backend
+code (PHP).
+• Our Code Base: Stored on the server, usually in a directory like /var/www/html.
+7. Database (MySQL)
+• Role: The database stores and manages data for the web application, such as user information,
+content, and settings.
+• Our Database: MySQL, running on the same server, listening on the default port 3306.
+8. Communication Protocol
+• Role: The server uses HTTP/HTTPS to communicate with the user's computer. HTTPS ensures
+encrypted communication.
+• Protocol: TCP/IP for data transmission.
+Issues with This Infrastructure
+1. Single Point of Failure (SPOF)
+• If the server fails, the entire website becomes inaccessible. There is no redundancy.
+2. Downtime During Maintenance
+• Deploying new code or restarting the web server for updates will result in temporary
+downtime.
+3. Scalability Issues
+• One server cannot handle a large amount of incoming traffic. It lacks load balancing and
+the ability to scale horizontally (add more servers).
